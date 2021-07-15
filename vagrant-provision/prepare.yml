@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: yes
+  vars:
+    terraform_version: 1.0.2
+  roles:
+    - common
+    - docker
+    - docker-compose
+    - migibert.terraform
+

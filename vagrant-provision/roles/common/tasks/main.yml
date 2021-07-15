@@ -1,0 +1,10 @@
+---
+- name: Installs necessary packages
+  apt:
+    pkg: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - git
+      - make
+      - python3-pip

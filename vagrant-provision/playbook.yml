@@ -1,0 +1,21 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Updates apt cache
+      apt:
+        update_cache: yes
+
+    - include_role:
+        name: common
+
+    - include_role:
+        name: docker
+
+    - include_role:
+        name: docker-compose
+
+    - include_role:
+        name: migibert.terraform
+      vars:
+        terraform_version: 1.0.2

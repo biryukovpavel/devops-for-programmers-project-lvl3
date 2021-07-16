@@ -35,7 +35,7 @@
 
 * Клонировать проект
 ```shell
-git clone git@github.com:biryukovpavel/devops-for-programmers-project-lvl2.git
+git clone git@github.com:biryukovpavel/devops-for-programmers-project-lvl3.git
 ```
 
 * Инициализировать Terraform

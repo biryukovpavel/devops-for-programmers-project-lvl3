@@ -39,8 +39,8 @@ variable "root_domain_name" {
 }
 
 variable "www_sub_domain_names" {
-  type        = string
-  default     = "www"
+  type    = string
+  default = "www"
 }
 
 variable "database" {

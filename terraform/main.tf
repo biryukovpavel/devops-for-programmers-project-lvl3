@@ -55,3 +55,13 @@ resource "digitalocean_database_cluster" "pg_project_lvl3" {
   region     = var.region
   node_count = var.database.node_count
 }
+
+resource "digitalocean_database_db" "redmine" {
+  cluster_id = digitalocean_database_cluster.pg_project_lvl3.id
+  name       = "redmine"
+}
+
+resource "digitalocean_database_user" "redmine" {
+  cluster_id = digitalocean_database_cluster.pg_project_lvl3.id
+  name       = "redmine"
+}

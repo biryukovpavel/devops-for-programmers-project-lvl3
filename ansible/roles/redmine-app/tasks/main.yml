@@ -1,0 +1,20 @@
+---
+- name: Deploy and run Redmine container
+  community.docker.docker_container:
+    name: redmine
+    image: redmine:{{ redmine_version }}
+    ports:
+      - 3000:3000
+    env:
+      REDMINE_DB_POSTGRES: "{{ redmine_db_host }}"
+      REDMINE_DB_PORT: "{{ redmine_db_port }}"
+      REDMINE_DB_DATABASE: "{{ redmine_db_database }}"
+      REDMINE_DB_USERNAME: "{{ redmine_db_username }}"
+      REDMINE_DB_PASSWORD: "{{ redmine_db_password }}"
+      REDMINE_NO_DB_MIGRATE: "true"
+    recreate: yes
+    restart: yes
+    restart_policy: always
+    pull: yes
+    detach: yes
+    container_default_behavior: no_defaults

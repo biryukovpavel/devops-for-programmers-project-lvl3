@@ -1,0 +1,9 @@
+project-lvl3-01         ansible_host=104.248.246.217
+project-lvl3-02         ansible_host=157.230.121.165
+
+[webservers]
+project-lvl3-01
+project-lvl3-02
+
+[db_deploy_server]
+project-lvl3-01

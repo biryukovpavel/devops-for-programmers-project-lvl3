@@ -12,3 +12,15 @@ tf-show:
 
 tf-destroy:
 	make -C terraform tf-destroy
+
+galaxy-install:
+	make -C ansible galaxy-install
+
+encrypt:
+	make -C ansible encrypt
+
+setup-servers:
+	make -C ansible setup-servers
+
+deploy:
+	make -C ansible deploy

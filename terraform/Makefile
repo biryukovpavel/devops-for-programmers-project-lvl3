@@ -1,3 +1,5 @@
+export TF_CLI_CONFIG_FILE = ${CURDIR}/.terraformrc
+
 tf-init:
 	terraform init
 

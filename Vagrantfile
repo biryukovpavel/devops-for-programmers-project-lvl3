@@ -9,6 +9,13 @@ Vagrant.configure("2") do |config|
   # The hostname the machine should have
   config.vm.hostname = "devops-project-lvl3"
 
+  # Create a forwarded port mapping which allows access to a specific port
+  # within the machine from a port on the host machine.
+  config.vm.network "forwarded_port", guest: 3000, host: 3000,
+    id: "port_redmine_http",
+    guest_ip: "0.0.0.0",
+    host_ip: "127.0.0.1"
+
   # Share an additional folder to the guest VM.
   config.vm.synced_folder ".", "/vagrant"
 

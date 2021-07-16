@@ -11,6 +11,7 @@
     - [Скачивание и установка](#download-and-install)
     - [Подготовка инфраструктуры](#prepare-infra)
     - [Деплой приложения](#deploy)
+    - [Установка агента мониторинга(DataDog)](#install-monitoring)
 1. [Ссылка на задеплоенное приложение](#link)
 
 <a name="introduction"></a>
@@ -22,7 +23,7 @@
 ## Требования
 - Make
 - Terraform 1.0.2 или выше
-- Ansible 2.9 или выше
+- Ansible 2.9.8 или выше
 
 <a name="getting-started"></a>
 ## Начало работы
@@ -72,8 +73,14 @@ make setup-servers
 Деплой базы данных и приложения на сервера
 ```shell
 make deploy
-
 ```
+
+<a name="install-monitoring"></a>
+### Установка агента мониторинга(DataDog) на сервера
+```shell
+make install-monitoring
+```
+
 <a name="link"></a>
 ## Ссылка на задеплоенное приложение
 https://devops-for-programmers-prod.club/

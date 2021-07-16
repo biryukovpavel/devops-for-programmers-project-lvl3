@@ -51,3 +51,21 @@ variable "database" {
     node_count = number
   })
 }
+
+variable "datadog_api_key" {
+  description = "Datadog API key"
+  type        = string
+  sensitive   = true
+}
+
+variable "datadog_app_key" {
+  description = "Datadog APP key"
+  type        = string
+  sensitive   = true
+}
+
+variable "datadog_api_url" {
+  description = "The API URL"
+  type        = string
+  default     = "https://api.datadoghq.eu/"
+}

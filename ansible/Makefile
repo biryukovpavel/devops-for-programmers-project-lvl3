@@ -10,3 +10,6 @@ setup-servers:
 
 deploy:
 	ansible-playbook -i ./inventories/hosts playbook.yml --vault-password-file ./tmp/ansible-vault-password --tags "deploy"
+
+install-monitoring:
+	ansible-playbook -i ./inventories/hosts playbook.yml --vault-password-file ./tmp/ansible-vault-password --tags "monitoring"

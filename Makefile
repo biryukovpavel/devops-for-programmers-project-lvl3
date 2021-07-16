@@ -24,3 +24,6 @@ setup-servers:
 
 deploy:
 	make -C ansible deploy
+
+install-monitoring:
+	make -C ansible install-monitoring

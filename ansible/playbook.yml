@@ -28,3 +28,9 @@
   roles:
     - redmine-app
   tags: [ "deploy", "deploy-redmine" ]
+
+- hosts: all
+  remote_user: root
+  roles:
+    - datadog.datadog
+  tags: [ "monitoring" ]

@@ -56,6 +56,18 @@ resource "digitalocean_database_cluster" "pg_project_lvl3" {
   node_count = var.database.node_count
 }
 
+resource "digitalocean_database_firewall" "trusted_web_sources" {
+  cluster_id = digitalocean_database_cluster.pg_project_lvl3.id
+
+  dynamic "rule" {
+    for_each = digitalocean_droplet.web
+    content {
+      type  = "droplet"
+      value = rule.value["id"]
+    }
+  }
+}
+
 resource "digitalocean_database_db" "redmine" {
   cluster_id = digitalocean_database_cluster.pg_project_lvl3.id
   name       = "redmine"

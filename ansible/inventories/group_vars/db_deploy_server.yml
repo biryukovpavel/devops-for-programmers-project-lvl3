@@ -1,13 +1,7 @@
 ---
-redmine_version: "4.2.1"
-redmine_db_host: "pg-project-lvl3-do-user-9241775-0.b.db.ondigitalocean.com"
-redmine_db_port: "25060"
-redmine_db_database: redmine
-redmine_db_username: redmine
-redmine_db_password: !vault |
-          $ANSIBLE_VAULT;1.1;AES256
-          61633261333439653863613531633832326262646234663130616332396233616535666363343935
-          3866353064346338376164303336323266343333666261360a656439626463336165306532353865
-          61616664393161613363396463653034303930336261313037346637653038643633616532383566
-          3636303836386337310a366434393364633639373833633962313263373336396236396332316637
-          32346535353932653131336133373838623966366463323537613237346361633334
+redmine_db_migration_version: "{{ redmine_version }}"
+redmine_db_migration_host: "{{ redmine_db_host }}"
+redmine_db_migration_port: "{{ redmine_db_port }}"
+redmine_db_migration_database: "{{ redmine_db_database }}"
+redmine_db_migration_username: "{{ redmine_db_username }}"
+redmine_db_migration_password: "{{ redmine_db_password }}"

@@ -1,0 +1,15 @@
+---
+- name: Deploy Redmine database schema
+  community.docker.docker_container:
+    name: redmine-deploy-db
+    image: redmine:{{ redmine_db_migration_version }}
+    env:
+      REDMINE_DB_POSTGRES: "{{ redmine_db_migration_host }}"
+      REDMINE_DB_PORT: "{{ redmine_db_migration_port }}"
+      REDMINE_DB_DATABASE: "{{ redmine_db_migration_database }}"
+      REDMINE_DB_USERNAME: "{{ redmine_db_migration_username }}"
+      REDMINE_DB_PASSWORD: "{{ redmine_db_migration_password }}"
+    pull: yes
+    container_default_behavior: no_defaults
+    detach: no
+    command: "rake db:migrate"

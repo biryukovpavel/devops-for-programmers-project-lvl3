@@ -1,0 +1,7 @@
+---
+redmine_db_migration_version: "4.2.1"
+redmine_db_migration_host: "127.0.0.1"
+redmine_db_migration_port: "5432"
+redmine_db_migration_database: "redmine"
+redmine_db_migration_username: "redmine"
+redmine_db_migration_password: ""

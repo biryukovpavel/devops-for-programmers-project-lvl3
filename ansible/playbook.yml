@@ -8,7 +8,7 @@
 - hosts: db_deploy_server
   remote_user: root
   roles:
-    - redmine-db
+    - redmine-db-migration
   tags: [ "deploy", "deploy-db" ]
 
 - hosts: all

@@ -1,0 +1,11 @@
+---
+- name: Updates apt cache
+  ansible.builtin.apt:
+    update_cache: yes
+
+- name: Install Docker Module for Python
+  include_role:
+    name: geerlingguy.pip
+  vars:
+    pip_install_packages:
+      - name: docker

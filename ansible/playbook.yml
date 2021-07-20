@@ -1,21 +1,9 @@
 ---
 - hosts: all
   remote_user: root
-  tasks:
-    - name: Updates apt cache
-      ansible.builtin.apt:
-        update_cache: yes
-      tags: [ "provision-webservers", "install" ]
-
-    - name: Install Docker Module for Python
-      include_role:
-        name: geerlingguy.pip
-        apply:
-          tags: [ "provision-webservers", "install" ]
-      vars:
-        pip_install_packages:
-          - name: docker
-      tags: [ "provision-webservers", "install" ]
+  roles:
+    - docker-server
+  tags: [ "provision-webservers" ]
 
 - hosts: db_deploy_server
   remote_user: root
